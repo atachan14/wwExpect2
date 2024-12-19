@@ -1,4 +1,12 @@
 from roles import *
+
+class RegulationInput:
+    role_regulation={"市民":4,"狼":1}
+    strategy_option={
+        "cant_vills_deceive":True,
+        "admit_no_opposition_is_true":True
+    }
+
 class CastSetting:
     name_to_class_dict = {
         "潜伏": Latent,
@@ -23,12 +31,7 @@ class CastSetting:
         self.can_co_list = [role for role in self.role_regulation.keys()]
         self.player_size = sum(self.role_regulation.values())
 
-
-class OptionSetting:
-    def __init__(self):
-        strategy_option = {"cant_vills_deceive": True,
-                           "no_opponent_is_true": True}
-        vills_team_option = {"select_max_execution": True}
-        wolfs_team_option = {"select_max_bite": True,
-                             "can_self_bite": True}
-
+ri = RegulationInput
+cs = CastSetting(ri)
+print([role.name for role in cs.can_co_list])
+print(cs.player_size)
