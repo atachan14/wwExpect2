@@ -22,20 +22,27 @@ class Fox:
 
 class Latent(Role):
     name = "潜伏"
+    calc_priority=0
     # def __init__(majority_team):
     #     team = majority_team
 
 class Villager(Role,VillsTeam,Human):
     name = "市民"
+    calc_priority=1
+
 
 class Seer(Role,VillsTeam,Human):
     name = "占"
+    calc_priority=3
     
 class Medium(Role,VillsTeam,Human):
     name = "霊"
+    calc_priority=2
+
     
 class Hunter(Role,VillsTeam,Human):
     name = "狩"
+    calc_priority=1
 
 class NormalWolf(Role,WolfsTeam,Wolf):
     name = "狼"

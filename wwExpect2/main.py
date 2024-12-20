@@ -20,3 +20,5 @@ first_board=Board(1.0,cs,first_player_list)
 # print(first_board.player_list)
 
 
+
+
